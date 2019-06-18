@@ -9,6 +9,8 @@ import { CustomerComponent } from './view/customer/customer.component';
 import { ItemComponent } from './view/item/item.component';
 import { OrderComponent } from './view/order/order.component';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 const routes: Routes = [
@@ -55,6 +57,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     MDBBootstrapModule.forRoot(),
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
