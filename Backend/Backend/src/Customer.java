@@ -33,11 +33,13 @@ public class Customer extends HttpServlet {
                 ResultSet rst=pstm.executeQuery();
 
                 if (rst.next()){
+                    String id=rst.getString("id");
                     String name = rst.getString("name");
                     String address = rst.getString("address");
 
                     try (PrintWriter out = resp.getWriter()) {
                         out.println("{\n" +
+                                "  \"id\": \"" + id + "\",\n" +
                                 "  \"telephone\": \"" + telephone_search + "\",\n" +
                                 "  \"name\": \"" + name + "\",\n" +
                                 "  \"address\": \"" + address + "\"\n" +
@@ -69,12 +71,14 @@ public class Customer extends HttpServlet {
                     JsonArrayBuilder customers = Json.createArrayBuilder();
 
                     while (rst.next()){
+                        String id=rst.getString("id");
                         String telephone = rst.getString("telephone");
                         String name = rst.getString("name");
                         String address = rst.getString("address");
 
 
                         JsonObject customer = Json.createObjectBuilder().add("telephone",telephone)
+                                .add("id",id)
                                 .add("name", name)
                                 .add("address", address)
                                 .build();
