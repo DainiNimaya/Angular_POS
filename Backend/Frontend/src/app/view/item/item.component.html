@@ -1,0 +1,126 @@
+<div class="header-panel">
+  hi
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <div class="sidenav">
+        <a href="#" routerLink="/dashboard">Dashboard</a>
+        <a href="#" routerLink="/order">Order</a>
+        <a href="#" routerLink="/items">Item</a>
+        <a href="#"routerLink="/customers">Customer</a>
+      </div>
+    </div>
+    <div class="col-10">
+      <mdb-breadcrumb customClass="primary-color white-text">
+        <mdb-breadcrumb-item>Home</mdb-breadcrumb-item>
+        <mdb-breadcrumb-item class="active">Library</mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              Manage Item
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <div class="col">
+                  <div class="md-form">
+                    <i class="fas fa-user prefix"></i>
+                    <input mdbInput type="text" id="form1" class="form-control">
+                    <label for="form1">Description</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form">
+                    <i class="fas fa-price prefix"></i>
+                    <input mdbInput type="text" id="form2" class="form-control">
+                    <label for="form2">Price</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form">
+                    <i class="fas fa-mobile prefix"></i>
+                    <input mdbInput type="text" id="form3" class="form-control">
+                    <label for="form3">Quantity</label>
+                  </div>
+                </div>
+
+                <footer class="blockquote-footer">
+                  <div class="waves-input-wrapper waves-light"
+                       mdbWavesEffect><input mdbBtn color="primary"
+                                             type="submit" value="Submit">
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="card">
+            <div class="card-header">
+              View Customer
+            </div>
+            <!-- Editable table -->
+            <div class="card">
+              <div class="card-body">
+                <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success" (click)="add()">
+          <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+        </a>
+      </span>
+                  <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <tr>
+                      <th class="text-center">Person Name</th>
+                      <th class="text-center">Address</th>
+                      <th class="text-center">Contact No</th>
+                      <th class="text-center">Edit</th>
+                      <th class="text-center">Remove</th>
+                    </tr>
+                    <tr *ngFor="let person of personList; let id = index">
+                      <td>
+                        <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+                      </td>
+                      <td>
+                        <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+                      </td>
+                      <!--<td>-->
+                      <!--<span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>-->
+                      <!--</td>-->
+                      <td>
+                        <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+                      </td>
+                      <!--<td>-->
+                      <!--<span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>-->
+                      <!--</td>-->
+                      <td>
+            <span class="table-up">
+              <a class="indigo-text">
+                <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
+              </a>
+            </span>
+                        <span class="table-down">
+              <a class="indigo-text">
+                <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
+              </a>
+            </span>
+                      </td>
+                      <td>
+            <span class="table-remove">
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+            </span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Editable table -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

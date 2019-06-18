@@ -1,0 +1,45 @@
+
+<!--import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule, CardsModule } from 'angular-bootstrap-md'-->
+
+<div class="container">
+  <mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Point Of Sales System</strong>
+      </h5>
+    </mdb-card-header>
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5">
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+        <!-- Name -->
+        <div class="md-form mt-3">
+          <input type="text" id="materialSubscriptionFormPasswords" class="form-control" mdbInput>
+          <label for="materialSubscriptionFormPasswords">Username</label>
+        </div>
+
+        <!-- E-mai -->
+        <div class="md-form">
+          <input type="email" id="materialSubscriptionFormEmail" class="form-control" mdbInput>
+          <label for="materialSubscriptionFormEmail">Password</label>
+        </div>
+
+        <!-- Sign in button -->
+        <button mdbBtn color="info" outline="true" rounded="true" block="true" routerLink="/dashboard" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+                type="submit">Sign in</button>
+
+      </form>
+      <!-- Form -->
+
+    </mdb-card-body>
+
+  </mdb-card>
+  <!-- Material form subscription -->
+</div>
+
+
+
